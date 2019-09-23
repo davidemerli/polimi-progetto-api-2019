@@ -22,13 +22,13 @@ typedef struct tree_t Tree;
  * the main array is initialized with a size of 10000 entries (HASH_DIMENSION)
  */
 typedef struct entry_t {
-	char 				*id;		//Entity ID
+	char 			*id;		//Entity ID
 	struct entry_t 		*next;		//Next element in the chain
-	List 				*rel_list;	//List of relation types, storing trees with the actual relation nodes
+	List 			*rel_list;	//List of relation types, storing trees with the actual relation nodes
 } entity_t;
 
 typedef struct {
-	entity_t 			**table;
+	entity_t 		**table;
 } HashTable;
 
 /*------------------
@@ -49,13 +49,13 @@ typedef struct {
  * in the hash table with all the current entities that are being monitored.
  */
 typedef struct node {
-	entity_t 			*to;				//Entity pointer
-	char 				color;				//Color of the node, used for 'rb_insert_fixup' and 'rb_delete_fixup'
-	struct node 		*p, *left, *right;	//Pointers to the parent, the left child and the right child
+	entity_t 		*to;				//Entity pointer
+	char 			color;				//Color of the node, used for 'rb_insert_fixup' and 'rb_delete_fixup'
+	struct node 		*p, *left, *right;		//Pointers to the parent, the left child and the right child
 } node;
 
 struct tree_t {
-	node 				*root;	//Root of the tree. This is the only node with the parent being NIL
+	node 			*root;	//Root of the tree. This is the only node with the parent being NIL
 
 	short unsigned int 	size;	//Number of nodes, modified in rb_insert & rb_delete, initialized as 0 in 'init_tree'
 };
@@ -84,14 +84,14 @@ typedef enum {RED, BLACK} Color;
  * The trees used to store data for 'report' are the ones in 'RELATION_TYPES' list.
  */
 typedef struct list_t { //Node of the list
-	char 				*key;				//Relation type name
+	char 			*key;				//Relation type name
 	struct list_t 		*next;				//Next element in the list
-	Tree 				*tree; 				//The tree containing entities relations towards one single entity
-	short unsigned int 	current_maximum;	//The value of the maximum number of relation, it is printed for every relation type report
+	Tree 			*tree; 				//The tree containing entities relations towards one single entity
+	short unsigned int 	current_maximum;		//The value of the maximum number of relation, it is printed for every relation type report
 } list_t;
 
 struct list { //The struct containing the head of the list
-	list_t 				*head;				//Head of the list
+	list_t 			*head;				//Head of the list
 };
 
 /*
@@ -442,7 +442,7 @@ void restore_data_maximum(list_t *data_list, char *type) {
 }
 
 /****************************/
-/*		INPUT FUNCTIONS		*/
+/*	INPUT FUNCTIONS     */
 /****************************/
 
 /*
@@ -516,7 +516,7 @@ void process_input(FILE *input) {
 }
 
 /****************************/
-/*		LIST FUNCTIONS		*/
+/*	LIST FUNCTIONS	    */
 /****************************/
 
 /*
