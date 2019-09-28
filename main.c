@@ -1,7 +1,9 @@
 /*
- *  Progetto Algoritmi e Principi dell'Informatica - 2019
+ * 	-----------------------------------------------------
+ *  	Progetto Algoritmi e Principi dell'Informatica - 2019
  *
  *	Author: Davide Merli
+ *      -----------------------------------------------------
  */
 #include <stdio.h>
 #include <stdlib.h>
